@@ -16,5 +16,19 @@ namespace GPLApp
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpForm hlp = new HelpForm();
+            //hlp.MdiParent = this;
+            hlp.Show();
+
+
+        }
     }
 }
