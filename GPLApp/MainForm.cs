@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GPLApp
@@ -148,15 +149,51 @@ namespace GPLApp
                 }
             }
         }
-        private void txt_Cmd_Box_TextChanged(object sender, EventArgs e)
-        {
 
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "TXT files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter write = new StreamWriter(File.Create(save.FileName));
+                write.WriteLine(txt_Cmd_Box.Text);
+                write.Close();
+                MessageBox.Show("File Saved Successfully");
+            }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void browseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
+            openFileDialog1.Title = "Browse file from specified folder";
+            openFileDialog1.InitialDirectory = "E:\\";
+            openFileDialog1.Filter = "TXT files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.Filter = "DOCX files (*.docx)|*.docx|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+            //Browse .txt file from computer             
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = openFileDialog1.OpenFile()) != null)
+                    {
+                        using (myStream)
+                        {
+                            // Insert code to read the stream here.                        
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+                //displays the text inside the file on TextBox named as txtInput                
+                txt_Cmd_Box.Text = File.ReadAllText(openFileDialog1.FileName);
+            }
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
