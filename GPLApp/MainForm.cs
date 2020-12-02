@@ -17,7 +17,7 @@ namespace GPLApp
 
 
         public Color newcolor;
-        int x = 0, y = 0, width, height, radius, repeatval;
+        int x = 0, y = 0, width, height, radius;
 
         private void txt_Exec_Cmd_TextChanged(object sender, EventArgs e)
         {
@@ -90,8 +90,54 @@ namespace GPLApp
                             }
                         }
                     }
+                    else if (cmd[0].Equals("circle") == true)
+                    {
+                        if (cmd.Length != 2) { MessageBox.Show("Incorrect Parameter"); }
+                        else
+                        {
+                            if (cmd[1].Equals("radius") == true)
+                            {
+                                ShapesInterface circle = factory.getShape("circle");
+                                Circle c = new Circle();
+                                c.Set(x, y, radius);
+                                c.Draw(g);
+                            }
+                            else
+                            {
+                                Int32.TryParse(cmd[1], out radius);
+                                ShapesInterface circle = factory.getShape("circle");
+                                Circle c = new Circle();
+                                c.Set(x, y, radius);
+                                c.Draw(g);
+                            }
+                        }
+                    }
+                    else if (cmd[0].Equals("triangle") == true)
+                    {
+                        string[] param = cmd[1].Split(',');
+                        if (param.Length != 2)
+                        {
+                            MessageBox.Show("Incorrect Parameter");
 
-                }
+                        }
+                        else
+                        {
+                            Int32.TryParse(param[0], out width);
+                            Int32.TryParse(param[1], out height);
+                            ShapesInterface circle = factory.getShape("triangle");
+                            Triangle r = new Triangle();
+                            r.Set(x, y, width, height);
+                            r.Draw(g);
+                        }
+                    }
+
+                    else if (!cmd[0].Equals(null))
+                    {
+                        int errorLine = k + 1;
+                        MessageBox.Show("Invalid command recognised on line " + errorLine, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }   
             }
             else
             {

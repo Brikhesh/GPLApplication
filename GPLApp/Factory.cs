@@ -11,18 +11,18 @@ namespace GPLApp
         public override ShapesInterface getShape(string ShapeType)
         {
             ShapeType = ShapeType.ToLower().Trim();
-            //if (ShapeType.Equals("circle"))
-            //{
-            //    return new Circle();
-            //}
-          if (ShapeType.Equals("rectangle"))
+            if (ShapeType.Equals("circle"))
+            {
+                return new Circle();
+            }
+            if (ShapeType.Equals("rectangle"))
             {
                 return new Rectangle();
             }
-            //else if (ShapeType.Equals("triangle"))
-            //{
-            //    return new Triangle();
-            //}
+            else if (ShapeType.Equals("triangle"))
+            {
+                return new Triangle();
+            }
             else
             {
                 //throw an appropriate exception.
