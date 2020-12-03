@@ -144,8 +144,13 @@ namespace GPLApp
             {
                 if (txt_Exec_Cmd.Text.ToLower().Trim() == "clear")
                 {
-                    txt_Cmd_Box.Clear();
+                    //txt_Cmd_Box.Clear();
+                    DisplayPnl.Invalidate();
                     
+                }
+                else if(txt_Exec_Cmd.Text.ToLower().Trim() == "reset")
+                {
+                    txt_Cmd_Box.Clear();
                 }
             }
         }
@@ -189,7 +194,7 @@ namespace GPLApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
                 //displays the text inside the file on TextBox named as txtInput                
                 txt_Cmd_Box.Text = File.ReadAllText(openFileDialog1.FileName);
@@ -198,9 +203,15 @@ namespace GPLApp
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HelpForm hlp = new HelpForm();
-            //hlp.MdiParent = this;
-            hlp.Show();
+            try
+            {
+                System.Diagnostics.Process.Start("file:///E:/GPLHelperFile.pdf");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
+            }
+            
         }
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -119,7 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 641);
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ClientSize = new System.Drawing.Size(803, 617);
             this.Controls.Add(this.DisplayPnl);
             this.Controls.Add(this.txt_Exec_Cmd);
             this.Controls.Add(this.txt_Cmd_Box);
