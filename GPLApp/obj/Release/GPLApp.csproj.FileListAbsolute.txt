@@ -1,0 +1,10 @@
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Release\GPLApp.exe.config
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Release\GPLApp.exe
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Release\GPLApp.pdb
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Release\GPLApp.csprojAssemblyReference.cache
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Release\GPLApp.MainForm.resources
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Release\GPLApp.Properties.Resources.resources
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Release\GPLApp.csproj.GenerateResource.cache
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Release\GPLApp.csproj.CoreCompileInputs.cache
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Release\GPLApp.exe
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Release\GPLApp.pdb

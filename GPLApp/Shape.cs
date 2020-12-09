@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace GPLApp
 {
@@ -19,11 +14,9 @@ namespace GPLApp
         }
         public Shape(int x, int y)
         {
-           this.color = color;
             this.x = x;
             this.y = y;
         }
-
         public abstract void Draw(Graphics g);
 
         public virtual void Set(params int[] list)

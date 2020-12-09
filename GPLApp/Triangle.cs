@@ -1,43 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GPLApp
 {
     public class Triangle : ShapesInterface
     {
-        public int x, y, width, height;
 
-        public Triangle() : base()
-        {
-            width = 0;
-            height = 0;
-        }
-
-        public Triangle(int x, int y, int width, int height)
-        {
-            this.width = width;
-            this.height = height;
-        }
+        public int xi1, yi1, xi2, yi2, xii1, yii1, xii2, yii2, xiii1, yiii1, xiii2, yiii2;
 
         public void Draw(Graphics g)
         {
             try
             {
-                Point[] p = new Point[3];
-                p[0].X = x;
-                p[0].Y = y - (height / 2);
-
-                p[1].X = x - (width / 2);
-                p[1].Y = y + (height / 2);
-
-                p[2].X = x + (width / 2);
-                p[2].Y = y + (height / 2);
-                Pen po = new Pen(Color.Black, 2);
-                g.DrawPolygon(po, p);
+                Pen p = new Pen(Color.Black, 2);
+                g.DrawLine(p, xi1, yi1, xi2, yi2);
+                g.DrawLine(p, xii1, yii1, xii2, yii2);
+                g.DrawLine(p, xiii1, yiii1, xiii2, yiii2);
             }
             catch (Exception ex)
             {
@@ -46,11 +24,22 @@ namespace GPLApp
             }
         }
 
-       public void Set(params int[] list)
+        public void Set(params int[] list)
         {
-            this.x = list[0]; this.y = list[1];
-            this.width = list[2];
-            this.height = list[3];
+            this.xi1 = list[0];
+            this.yi1 = list[1];
+            this.xi2 = list[2];
+            this.yi2 = list[3];
+
+            this.xii1 = list[4];
+            this.yii1 = list[5];
+            this.xii2 = list[6];
+            this.yii2 = list[7];
+
+            this.xiii1 = list[8];
+            this.yiii1 = list[9];
+            this.xiii2 = list[10];
+            this.yiii2 = list[11];
         }
     }
 }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GPLApp
 {
@@ -14,7 +10,6 @@ namespace GPLApp
         public Circle() : base()
         {
         }
-
 
         public Circle(int x, int y, int radius)
         {
