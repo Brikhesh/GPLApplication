@@ -31,6 +31,7 @@ namespace GPLApp
 
         private void txt_Exec_Cmd_TextChanged(object sender, EventArgs e)
         {
+
             if (txt_Exec_Cmd.Text.ToLower().Trim() == "run")
             {
                 loadCommand();
@@ -39,17 +40,15 @@ namespace GPLApp
             {
                 if (txt_Exec_Cmd.Text.ToLower().Trim() == "clear")
                 {
-                    //txt_Cmd_Box.Clear();
                     DisplayPnl.Invalidate();
-                    
+
                 }
-                else if(txt_Exec_Cmd.Text.ToLower().Trim() == "reset")
+                else if (txt_Exec_Cmd.Text.ToLower().Trim() == "reset")
                 {
                     txt_Cmd_Box.Clear();
                 }
             }
         }
-
 
         private void loadCommand()
         {
@@ -89,20 +88,6 @@ namespace GPLApp
                 }
             }
         }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Filter = "TXT files (*.txt)|*.txt|All files (*.*)|*.*";
-            if (save.ShowDialog() == DialogResult.OK)
-            {
-                StreamWriter write = new StreamWriter(File.Create(save.FileName));
-                write.WriteLine(txt_Cmd_Box.Text);
-                write.Close();
-                MessageBox.Show("File Saved Successfully");
-            }
-        }
-
 
         private void RunCommand(String oneLineCommand)
         {
@@ -150,21 +135,21 @@ namespace GPLApp
                             loop = true;
                         }
                     }
-                    int ifStartLine = (GetIfStartLineNumber());
-                    int ifEndLine = (GetEndifEndLineNumber() - 1);
-                    loopCounter = ifEndLine;
-                    if (loop)
-                    {
-                        for (int j = ifStartLine; j <= ifEndLine; j++)
-                        {
-                            string oneLineCommand1 = txt_Cmd_Box.Lines[j];
-                            oneLineCommand1 = oneLineCommand1.Trim();
-                            if (!oneLineCommand1.Equals(""))
-                            {
-                                RunCommand(oneLineCommand1);
-                            }
-                        }
-                    }
+                    //int ifStartLine = (GetIfStartLineNumber());
+                    //int ifEndLine = (GetEndifEndLineNumber() - 1);
+                    //loopCounter = ifEndLine;
+                    //if (loop)
+                    //{
+                    //    for (int j = ifStartLine; j <= ifEndLine; j++)
+                    //    {
+                    //        string oneLineCommand1 = txt_Cmd_Box.Lines[j];
+                    //        oneLineCommand1 = oneLineCommand1.Trim();
+                    //        if (!oneLineCommand1.Equals(""))
+                    //        {
+                    //            RunCommand(oneLineCommand1);
+                    //        }
+                    //    }
+                    //}
                     else
                     {
                         MessageBox.Show("If Statement is false");
@@ -258,50 +243,8 @@ namespace GPLApp
             {
                 sendDrawCommand(oneLineCommand);
             }
-        }
 
-        private int GetIfStartLineNumber()
-        {
-            int numberOfLines = txt_Cmd_Box.Lines.Length;
-            int lineNum = 0;
 
-            for (int i = 0; i < numberOfLines; i++)
-            {
-                String oneLineCommand = txt_Cmd_Box.Lines[i];
-                oneLineCommand = Regex.Replace(oneLineCommand, @"\s+", " ");
-                string[] cmd = oneLineCommand.Split(' ');
-                //removing white spaces in between cmd
-                for (int j = 0; j < cmd.Length; j++)
-                {
-                    cmd[j] = cmd[j].Trim();
-                }
-                String firstWord = cmd[0].ToLower();
-                oneLineCommand = oneLineCommand.Trim();
-                if (firstWord.Equals("if"))
-                {
-                    lineNum = i + 1;
-
-                }
-            }
-            return lineNum;
-        }
-
-        private int GetEndifEndLineNumber()
-        {
-            int numberOfLines = txt_Cmd_Box.Lines.Length;
-            int lineNum = 0;
-
-            for (int i = 0; i < numberOfLines; i++)
-            {
-                String oneLineCommand = txt_Cmd_Box.Lines[i];
-                oneLineCommand = oneLineCommand.Trim();
-                if (oneLineCommand.ToLower().Equals("endif"))
-                {
-                    lineNum = i + 1;
-
-                }
-            }
-            return lineNum;
         }
 
         private int GetSize(string lineCommand)
@@ -410,9 +353,94 @@ namespace GPLApp
                 }
 
             }
+            else
+            {
+                if (firstWord.Equals("loop"))
+                {
+                    counter = int.Parse(cmd[1]);
+                    int loopStartLine = (GetLoopStartLineNumber());
+                    int loopEndLine = (GetLoopEndLineNumber() - 1);
+                    loopCounter = loopEndLine;
+                    for (int i = 0; i < counter; i++)
+                    {
+                        for (int j = loopStartLine; j <= loopEndLine; j++)
+                        {
+                            String oneLineCommand = txt_Cmd_Box.Lines[j];
+                            oneLineCommand = oneLineCommand.Trim();
+                            if (!oneLineCommand.Equals(""))
+                            {
+                                RunCommand(oneLineCommand);
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }        
 
+        private int GetLoopStartLineNumber()
+        {
+            int numberOfLines = txt_Cmd_Box.Lines.Length;
+            int lineNum = 0;
 
-            //loop code 
+            for (int i = 0; i < numberOfLines; i++)
+            {
+                String oneLineCommand = txt_Cmd_Box.Lines[i];
+                oneLineCommand = Regex.Replace(oneLineCommand, @"\s+", " ");
+                string[] cmd = oneLineCommand.Split(' ');
+                //removing white spaces in between cmd
+                for (int j = 0; j < cmd.Length; j++)
+                {
+                    cmd[j] = cmd[j].Trim();
+                }
+                String firstWord = cmd[0].ToLower();
+                oneLineCommand = oneLineCommand.Trim();
+                if (firstWord.Equals("loop"))
+                {
+                    lineNum = i + 1;
+
+                }
+            }
+            return lineNum;
+
+        }
+
+        private int GetLoopEndLineNumber()
+        {
+            try
+            {
+                int numberOfLines = txt_Cmd_Box.Lines.Length;
+                int lineNum = 0;
+
+                for (int i = 0; i < numberOfLines; i++)
+                {
+                    String oneLineCommand = txt_Cmd_Box.Lines[i];
+                    oneLineCommand = oneLineCommand.Trim();
+                    if (oneLineCommand.ToLower().Equals("endloop"))
+                    {
+                        lineNum = i + 1;
+
+                    }
+                }
+                return lineNum;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "TXT files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter write = new StreamWriter(File.Create(save.FileName));
+                write.WriteLine(txt_Cmd_Box.Text);
+                write.Close();
+                MessageBox.Show("File Saved Successfully");
+            }
         }
 
         private void DrawRectangle(int width, int height)
@@ -443,7 +471,6 @@ namespace GPLApp
             pnt[2].Y = y - adj;
             g.DrawPolygon(myPen, pnt);
         }
-
 
         private void browseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -484,11 +511,11 @@ namespace GPLApp
             {
                 System.Diagnostics.Process.Start("file:///E:/GPLHelperFile.pdf");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error:" + ex.Message);
             }
-            
+
         }
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -498,12 +525,12 @@ namespace GPLApp
         public void moveTo(int toX, int toY)
         {
             x = toX;
-            y = toY; 
+            y = toY;
         }
 
         public void drawTo(int toX, int toY)
-        { 
-            x = toX; 
+        {
+            x = toX;
             y = toY;
         }
 
