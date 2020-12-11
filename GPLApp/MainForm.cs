@@ -135,21 +135,21 @@ namespace GPLApp
                             loop = true;
                         }
                     }
-                    //int ifStartLine = (GetIfStartLineNumber());
-                    //int ifEndLine = (GetEndifEndLineNumber() - 1);
-                    //loopCounter = ifEndLine;
-                    //if (loop)
-                    //{
-                    //    for (int j = ifStartLine; j <= ifEndLine; j++)
-                    //    {
-                    //        string oneLineCommand1 = txt_Cmd_Box.Lines[j];
-                    //        oneLineCommand1 = oneLineCommand1.Trim();
-                    //        if (!oneLineCommand1.Equals(""))
-                    //        {
-                    //            RunCommand(oneLineCommand1);
-                    //        }
-                    //    }
-                    //}
+                    int ifStartLine = (GetIfStartLineNumber());
+                    int ifEndLine = (GetEndifEndLineNumber() - 1);
+                    loopCounter = ifEndLine;
+                    if (loop)
+                    {
+                        for (int j = ifStartLine; j <= ifEndLine; j++)
+                        {
+                            string oneLineCommand1 = txt_Cmd_Box.Lines[j];
+                            oneLineCommand1 = oneLineCommand1.Trim();
+                            if (!oneLineCommand1.Equals(""))
+                            {
+                                RunCommand(oneLineCommand1);
+                            }
+                        }
+                    }
                     else
                     {
                         MessageBox.Show("If Statement is false");
@@ -374,9 +374,100 @@ namespace GPLApp
                         }
                     }
                 }
-                
+                else if (firstWord.Equals("if"))
+                {
+                    Boolean loop = false;
+                    if (cmd[1].ToLower().Equals("radius"))
+                    {
+                        if (radius == int.Parse(cmd[1]))
+                        {
+                            loop = true;
+                        }
+                    }
+                    else if (cmd[1].ToLower().Equals("width"))
+                    {
+                        if (width == int.Parse(cmd[1]))
+                        {
+                            loop = true;
+                        }
+                    }
+                    else if (cmd[1].ToLower().Equals("height"))
+                    {
+                        if (height == int.Parse(cmd[1]))
+                        {
+                            loop = true;
+                        }
+
+                    }
+                    else if (cmd[1].ToLower().Equals("counter"))
+                    {
+                        if (counter == int.Parse(cmd[1]))
+                        {
+                            loop = true;
+                        }
+                    }
+                    int ifStartLine = (GetIfStartLineNumber());
+                    int ifEndLine = (GetEndifEndLineNumber() - 1);
+                    loopCounter = ifEndLine;
+                    if (loop)
+                    {
+                        for (int j = ifStartLine; j <= ifEndLine; j++)
+                        {
+                            String oneLineCommand = txt_Cmd_Box.Lines[j];
+                            oneLineCommand = oneLineCommand.Trim();
+                            if (!oneLineCommand.Equals(""))
+                            {
+                                RunCommand(oneLineCommand);
+                            }
+                        }
+                    }
+                }
             }
-        }        
+        }
+
+        private int GetIfStartLineNumber()
+        {
+            int numberOfLines = txt_Cmd_Box.Lines.Length;
+            int lineNum = 0;
+
+            for (int i = 0; i < numberOfLines; i++)
+            {
+                String oneLineCommand = txt_Cmd_Box.Lines[i];
+                oneLineCommand = Regex.Replace(oneLineCommand, @"\s+", " ");
+                string[] cmd = oneLineCommand.Split(' ');
+                //removing white spaces in between cmd
+                for (int j = 0; j < cmd.Length; j++)
+                {
+                    cmd[j] = cmd[j].Trim();
+                }
+                String firstWord = cmd[0].ToLower();
+                oneLineCommand = oneLineCommand.Trim();
+                if (firstWord.Equals("if"))
+                {
+                    lineNum = i + 1;
+
+                }
+            }
+            return lineNum;
+        }
+
+        private int GetEndifEndLineNumber()
+        {
+            int numberOfLines = txt_Cmd_Box.Lines.Length;
+            int lineNum = 0;
+
+            for (int i = 0; i < numberOfLines; i++)
+            {
+                String oneLineCommand = txt_Cmd_Box.Lines[i];
+                oneLineCommand = oneLineCommand.Trim();
+                if (oneLineCommand.ToLower().Equals("endif"))
+                {
+                    lineNum = i + 1;
+
+                }
+            }
+            return lineNum;
+        }
 
         private int GetLoopStartLineNumber()
         {
