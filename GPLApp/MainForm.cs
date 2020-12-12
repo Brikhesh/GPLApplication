@@ -10,6 +10,7 @@ namespace GPLApp
     public partial class MainForm : Form
     {
         Graphics g;
+        ProgramValidation validate;
         public MainForm()
         {
             InitializeComponent();
@@ -34,7 +35,18 @@ namespace GPLApp
 
             if (txt_Exec_Cmd.Text.ToLower().Trim() == "run")
             {
-                loadCommand();
+                if (txt_Cmd_Box.Text != null && txt_Cmd_Box.Text != "")
+                {
+                    validate = new ProgramValidation(txt_Cmd_Box);
+
+                    if (!validate.isSomethingInvalid)
+                    {
+
+                        loadCommand();
+                    }
+                }
+
+
             }
             else
             {
@@ -530,7 +542,7 @@ namespace GPLApp
                 StreamWriter write = new StreamWriter(File.Create(save.FileName));
                 write.WriteLine(txt_Cmd_Box.Text);
                 write.Close();
-                MessageBox.Show("File Saved Successfully");
+                MessageBox.Show("File Successfully Save In Your Computer");
             }
         }
 
