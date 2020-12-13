@@ -95,3 +95,5 @@ E:\C#ASP.NET WORKSPACE\GPLApp\GPLUnitTesting\obj\Debug\netcoreapp3.1\GPLUnitTest
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLUnitTesting\obj\Debug\netcoreapp3.1\GPLUnitTesting.dll
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLUnitTesting\obj\Debug\netcoreapp3.1\GPLUnitTesting.pdb
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLUnitTesting\obj\Debug\netcoreapp3.1\GPLUnitTesting.genruntimeconfig.cache
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLUnitTesting\bin\Debug\netcoreapp3.1\GPLApp.xml
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLUnitTesting\bin\Debug\netcoreapp3.1\GPLUnitTesting.xml

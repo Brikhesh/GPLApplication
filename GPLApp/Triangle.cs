@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace GPLApp
 {
     public class Triangle : ShapesInterface
     {
-
+        /// <summary>
+        /// Triangle sides
+        /// </summary>
         public int xi1, yi1, xi2, yi2, xii1, yii1, xii2, yii2, xiii1, yiii1, xiii2, yiii2;
 
+
+        /// <summary>
+        /// Method to draw triangle in panelbox
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
             try
@@ -20,10 +28,15 @@ namespace GPLApp
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
+
+        /// <summary>
+        /// Method which takes all the axis points and sets its value
+        /// </summary>
+        /// <param name="list"></param>
         public void Set(params int[] list)
         {
             this.xi1 = list[0];

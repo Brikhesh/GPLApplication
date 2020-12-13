@@ -6,6 +6,9 @@ namespace GPLUnitTesting
     [TestClass]
     public class RectangleTest
     {
+        /// <summary>
+        /// Method to test rectangle while providing manaul params like x,y axis along with height and width and checking it with main program
+        /// </summary>
         [TestMethod]
         public void TestRect()
         {

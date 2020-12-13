@@ -6,6 +6,9 @@ namespace GPLUnitTesting
     [TestClass]
     public class TriangleTest
     {
+        /// <summary>
+        /// Test method of triangle shape
+        /// </summary>
         [TestMethod]
         public void TestTriangle()
         {

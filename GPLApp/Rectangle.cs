@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace GPLApp
 {
+    /// <summary>
+    /// Class is defined as rectangle which inherits from ShapesInterface
+    /// </summary>
     public class Rectangle : ShapesInterface
     {
-
+        /// <summary>
+        /// The value of x and y axis in panelbox with height and width of rectangle to be drawn
+        /// </summary>
         public int x, y, width, height;
        public Color newcolor;
 
 
+        /// <summary>
+        /// provides width and height of rectangle
+        /// </summary>
         public Rectangle() : base()
         {
             width = 0;
@@ -22,7 +31,10 @@ namespace GPLApp
             this.height = height;
         }
 
-
+        /// <summary>
+        /// method used to draw the shape in panelbox
+        /// </summary>
+        /// <param name="g"></param>
         public void Draw(Graphics g)
         {
             try
@@ -33,10 +45,15 @@ namespace GPLApp
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
+
+        /// <summary>
+        /// Method which sets the value of x, y axis along with height and width of rectangle
+        /// </summary>
+        /// <param name="list"></param>
        public void Set(params int[] list)
         {
             try
@@ -49,7 +66,7 @@ namespace GPLApp
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 

@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace GPLApp
 {
+    /// <summary>
+    /// Classs which validates the user input and gives proper error response
+    /// </summary>
     public class ProgramValidation
     {
         private TextBox txtCommand;
@@ -51,7 +54,7 @@ namespace GPLApp
             }
         }
         /// <summary>
-        /// this function is to check loop and if validation
+        /// This method validates loop and if endif statement in program
         /// </summary>
         public void checkLoopAndIfValidation()
         {
@@ -144,6 +147,11 @@ namespace GPLApp
             }
         }
 
+
+        /// <summary>
+        /// This method checks the line command in program like moveto,drawto etc.
+        /// </summary>
+        /// <param name="lineOfCommand"></param>
         public void checkLineValidation(string lineOfCommand)
         {
             String[] keyword = { "circle", "rectangle", "triangle", "drawto", "moveto", "repeat", "if", "endif", "loop", "endloop" };
@@ -180,7 +188,7 @@ namespace GPLApp
                                 {
                                     isValidCommand = false;
                                 }
-                                //throw new NonDigitValueException("The value is not numerical \r\n It is not an error but just showing custom made exception.");
+                                
 
                             }
                         }
@@ -501,7 +509,7 @@ namespace GPLApp
 
         }
         /// <summary>
-        /// Check whether the variable has been defined or not
+        /// Check whether the variable has been defined in the program or not
         /// </summary>
         /// <param name="variable"></param>
         public void checkIfVariableDefined(string variable)

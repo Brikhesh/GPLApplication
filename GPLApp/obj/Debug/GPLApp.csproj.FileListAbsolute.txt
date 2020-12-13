@@ -8,3 +8,4 @@ E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Debug\GPLApp.exe
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Debug\GPLApp.pdb
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Debug\GPLApp.exe
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Debug\GPLApp.pdb
+E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Debug\GPLApp.xml

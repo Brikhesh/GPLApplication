@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace GPLApp
 {
+    /// <summary>
+    /// Main form class of the application
+    /// </summary>
     public partial class MainForm : Form
     {
         Graphics g;
@@ -30,6 +33,11 @@ namespace GPLApp
         public int width = 0;
         public int height = 0;
 
+        /// <summary>
+        /// This takes the execution command for application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_Exec_Cmd_TextChanged(object sender, EventArgs e)
         {
 
@@ -62,6 +70,9 @@ namespace GPLApp
             }
         }
 
+        /// <summary>
+        /// This method loads the command and calls RunCommand further
+        /// </summary>
         private void loadCommand()
         {
             Graphics g = DisplayPnl.CreateGraphics();
@@ -100,6 +111,11 @@ namespace GPLApp
                 }
             }
         }
+
+        /// <summary>
+        /// This method runs the program and further calls the draw command to finally draw object in panel
+        /// </summary>
+        /// <param name="oneLineCommand"></param>
 
         private void RunCommand(String oneLineCommand)
         {
@@ -259,6 +275,12 @@ namespace GPLApp
 
         }
 
+
+        /// <summary>
+        /// This method returns the size of structure
+        /// </summary>
+        /// <param name="lineCommand"></param>
+        /// <returns>the value of the size</returns>
         private int GetSize(string lineCommand)
         {
             int value = 0;
@@ -286,6 +308,11 @@ namespace GPLApp
             return value;
         }
 
+
+        /// <summary>
+        /// Initiate shape and finally draw it in user passed command
+        /// </summary>
+        /// <param name="lineOfCommand"></param>
         private void sendDrawCommand(string lineOfCommand)
         {
             String[] shapes = { "circle", "rectangle", "triangle" };
@@ -437,6 +464,11 @@ namespace GPLApp
             }
         }
 
+
+        /// <summary>
+        /// initiates the if statement
+        /// </summary>
+        /// <returns>lineNum</returns>
         private int GetIfStartLineNumber()
         {
             int numberOfLines = txt_Cmd_Box.Lines.Length;
@@ -463,6 +495,11 @@ namespace GPLApp
             return lineNum;
         }
 
+
+        /// <summary>
+        /// ends the endif statement in program
+        /// </summary>
+        /// <returns></returns>
         private int GetEndifEndLineNumber()
         {
             int numberOfLines = txt_Cmd_Box.Lines.Length;
@@ -481,6 +518,11 @@ namespace GPLApp
             return lineNum;
         }
 
+
+        /// <summary>
+        /// initiatess the for loop in program
+        /// </summary>
+        /// <returns>lineNum</returns>
         private int GetLoopStartLineNumber()
         {
             int numberOfLines = txt_Cmd_Box.Lines.Length;
@@ -508,6 +550,11 @@ namespace GPLApp
 
         }
 
+
+        /// <summary>
+        /// ends the forloop in program
+        /// </summary>
+        /// <returns>lineNum</returns>
         private int GetLoopEndLineNumber()
         {
             try
@@ -533,6 +580,12 @@ namespace GPLApp
             }
         }
 
+
+        /// <summary>
+        /// This method is to save the program in user local computer for future access
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
@@ -546,19 +599,33 @@ namespace GPLApp
             }
         }
 
+        /// <summary>
+        /// This method is used to draw rectangle
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         private void DrawRectangle(int width, int height)
         {
             Pen p = new Pen(Color.Black, 2);
             g.DrawRectangle(p, x - (width / 2), y - (height / 2), width * 2, height * 2);
         }
 
-
+        /// <summary>
+        /// Method used while drawing circle
+        /// </summary>
+        /// <param name="radius"></param>
         private void DrawCircle(int radius)
         {
             Pen p = new Pen(Color.Black, 2);
             g.DrawEllipse(p, x - radius, y - radius, radius * 2, radius * 2);
         }
 
+        /// <summary>
+        /// Method to draw triangle in panelbox
+        /// </summary>
+        /// <param name="rBase"></param>
+        /// <param name="adj"></param>
+        /// <param name="hyp"></param>
         private void DrawTriangle(int rBase, int adj, int hyp)
         {
             Pen po = new Pen(Color.Black, 2);
@@ -575,6 +642,11 @@ namespace GPLApp
             g.DrawPolygon(myPen, pnt);
         }
 
+        /// <summary>
+        /// Method to import the program from user local program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void browseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
@@ -608,6 +680,12 @@ namespace GPLApp
             }
         }
 
+
+        /// <summary>
+        /// Method to open the pdf file from user's computer for guideline in application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -620,17 +698,35 @@ namespace GPLApp
             }
 
         }
+
+        /// <summary>
+        /// Closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        /// <summary>
+        /// Helps to position the shape in panelbox
+        /// </summary>
+        /// <param name="toX"></param>
+        /// <param name="toY"></param>
         public void moveTo(int toX, int toY)
         {
             x = toX;
             y = toY;
         }
 
+
+        /// <summary>
+        /// Helps to draw the shape in panelbox
+        /// </summary>
+        /// <param name="toX"></param>
+        /// <param name="toY"></param>
         public void drawTo(int toX, int toY)
         {
             x = toX;

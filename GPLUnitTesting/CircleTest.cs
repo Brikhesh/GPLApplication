@@ -6,6 +6,9 @@ namespace GPLUnitTesting
     [TestClass]
     public class CircleTest
     {
+        /// <summary>
+        /// Method to test the circle while providing manual parameters which checks it with our main program
+        /// </summary>
            [TestMethod]
             public void TestCircle()
             {

@@ -17,8 +17,18 @@ namespace GPLApp
             this.x = x;
             this.y = y;
         }
+
+        /// <summary>
+        /// Method which will be inherited by shapes classes to draw object 
+        /// </summary>
+        /// <param name="g"></param>
         public abstract void Draw(Graphics g);
 
+
+        /// <summary>
+        /// sets the value of x,y axis along with height and width
+        /// </summary>
+        /// <param name="list"></param>
         public virtual void Set(params int[] list)
         {
             this.x = list[0];
