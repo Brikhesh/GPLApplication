@@ -9,3 +9,14 @@ E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Debug\GPLApp.pdb
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Debug\GPLApp.exe
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\obj\Debug\GPLApp.pdb
 E:\C#ASP.NET WORKSPACE\GPLApp\GPLApp\bin\Debug\GPLApp.xml
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\bin\Debug\GPLApp.exe.config
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\bin\Debug\GPLApp.xml
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\bin\Debug\GPLApp.exe
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\bin\Debug\GPLApp.pdb
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\obj\Debug\GPLApp.csprojAssemblyReference.cache
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\obj\Debug\GPLApp.MainForm.resources
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\obj\Debug\GPLApp.Properties.Resources.resources
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\obj\Debug\GPLApp.csproj.GenerateResource.cache
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\obj\Debug\GPLApp.csproj.CoreCompileInputs.cache
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\obj\Debug\GPLApp.exe
+E:\British College\Level 6\DatabaseSoftEng Assignment\Bijaya Sharma(77262182)\GPLApp\GPLApp\obj\Debug\GPLApp.pdb

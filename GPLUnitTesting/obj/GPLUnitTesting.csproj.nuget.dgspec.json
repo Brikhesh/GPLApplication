@@ -1,33 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj": {}
+    "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj": {}
   },
   "projects": {
-    "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLApp\\GPLApp.csproj": {
+    "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLApp\\GPLApp.csproj": {
+      "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLApp\\GPLApp.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLApp\\GPLApp.csproj",
         "projectName": "GPLApp",
-        "projectPath": "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLApp\\GPLApp.csproj"
+        "projectPath": "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLApp\\GPLApp.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj": {
+    "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj",
         "projectName": "GPLUnitTesting",
-        "projectPath": "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLUnitTesting\\obj\\",
+        "projectPath": "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLUnitTesting\\GPLUnitTesting.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLUnitTesting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,8 +41,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLApp\\GPLApp.csproj": {
-                "projectPath": "E:\\C#ASP.NET WORKSPACE\\GPLApp\\GPLApp\\GPLApp.csproj"
+              "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLApp\\GPLApp.csproj": {
+                "projectPath": "C:\\Users\\dell\\source\\repos\\GPLApp\\GPLApp\\GPLApp.csproj"
               }
             }
           }
@@ -54,40 +55,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "MSTest.TestAdapter": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[16.5.0, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[1.2.0, )"
-            }
-          },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }
